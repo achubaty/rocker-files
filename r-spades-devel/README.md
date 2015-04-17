@@ -9,7 +9,7 @@ Dockerfile based on the [`rocker`](https://github.com/rocker-org/rocker) project
 Start the container instance:
 
 ```
-docker run -it rocker-files/r-spatial-devel
+docker run -it achubaty/r-spades-devel
 ```
 
 Run the `SpaDES` package checks in `R-devel`:

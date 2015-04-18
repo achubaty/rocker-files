@@ -24,5 +24,3 @@ RUN xvfb-run RDscript -e 'spades.deps <- c("data.table", "raster", "knitr", "Mat
 ## get the current `SpaDES` package build for testing
 RUN git clone https://github.com/PredictiveEcology/SpaDES.git &&
 	git checkout -b development
-
-CMD ["xvfb-run RDevel"]

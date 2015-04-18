@@ -13,7 +13,8 @@ RUN apt-get update -qq \
 ## additional build dependencies for R spatial packages
 RUN apt-get update -qq \
 	&& apt-get install -y --no-install-recommends \
-		curl
+		curl \
+		git
 
 ## install miniCRAN
 RUN RDscript -e 'install.packages("miniCRAN")'

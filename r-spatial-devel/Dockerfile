@@ -24,7 +24,10 @@ RUN apt-get update -qq \
 		libspatialite-dev \
 		libxml2-dev \
 		netcdf-bin \
-		r-cran-rgl
+		r-cran-rgl \
+		xauth \
+		xfonts-base \
+		xvfb
 
 ## install devtools
 RUN RDscript -e 'install.packages("devtools")'

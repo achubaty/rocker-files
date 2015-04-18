@@ -25,6 +25,8 @@ RUN apt-get update -qq \
 		libxml2-dev \
 		netcdf-bin \
 		r-cran-rgl \
+		xauth \
+		xfonts-base \
 		xvfb
 
 ## install devtools

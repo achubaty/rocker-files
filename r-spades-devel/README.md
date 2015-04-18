@@ -2,7 +2,7 @@
 
 Dockerfile based on the [`rocker`](https://github.com/rocker-org/rocker) project by @eddelbuettel and @cboettig.
 
-`r-spades-devel` provides a testing environment for building the [`SpaDES` package](https://github.com/PredictiveEcology/SpaDES).
+* `r-spades-devel` provides a testing environment for building the [`SpaDES` package](https://github.com/PredictiveEcology/SpaDES).
 
 ## `SpaDES` package checking
 

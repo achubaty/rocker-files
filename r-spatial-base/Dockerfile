@@ -24,7 +24,8 @@ RUN apt-get update -qq \
 		libspatialite-dev \
 		libxml2-dev \
 		netcdf-bin \
-		r-cran-rgl
+		r-cran-rgl \
+		xvfb
 
 ## install devtools
 RUN Rscript -e 'install.packages("devtools")'

@@ -9,7 +9,7 @@ Dockerfile based on the [`rocker`](https://github.com/rocker-org/rocker) project
 Start the container instance:
 
 ```
-docker run -it achubaty/r-spades-devel
+docker run -it achubaty/r-spades-devel xvfb-run Rdevel
 ```
 
 Run the `SpaDES` package checks in `R-devel`:

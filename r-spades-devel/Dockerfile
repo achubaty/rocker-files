@@ -1,7 +1,7 @@
 ## Emacs, make this -*- mode: sh; -*-
 
 ## start with the Docker 'r-spatial-devel' Debian-based image
-FROM r-spatial-devel:latest
+FROM achubaty/r-spatial-devel:latest
 
 ## maintainer of this script
 MAINTAINER Alex Chubaty <alex.chubaty@gmail.com>

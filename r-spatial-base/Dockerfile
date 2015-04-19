@@ -14,6 +14,8 @@ RUN apt-get update -qq \
 RUN apt-get update -qq \
     && apt-get install -y --no-install-recommends \
 		bwidget \
+		curl \
+		git \
 		gsl-bin \
 		libgdal-dev \
 		libgdal1-dev \

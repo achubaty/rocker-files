@@ -12,22 +12,22 @@ RUN apt-get update -qq \
 
 ## additional build dependencies for R spatial packages
 RUN apt-get update -qq \
-    && apt-get install -y --no-install-recommends \
-		bwidget \
-		gsl-bin \
-		libgdal-dev \
-		libgdal1-dev \
-		libgeos-dev \
-		libgeos++-dev \
-		libgsl0-dev \
-		libproj-dev \
-		libspatialite-dev \
-		libxml2-dev \
-		netcdf-bin \
-		r-cran-rgl \
-		xauth \
-		xfonts-base \
-		xvfb
+&& apt-get install -y --no-install-recommends \
+	bwidget \
+	gsl-bin \
+	libgdal-dev \
+	libgdal1-dev \
+	libgeos-dev \
+	libgeos++-dev \
+	libgsl0-dev \
+	libproj-dev \
+	libspatialite-dev \
+	libxml2-dev \
+	netcdf-bin \
+	xauth \
+	xfonts-base \
+	xvfb \
+&& apt-get build-dep -y r-cran-rgl
 
 ## install devtools
 RUN RDscript -e 'install.packages("devtools")'

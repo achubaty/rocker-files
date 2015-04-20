@@ -8,13 +8,13 @@ MAINTAINER Alex Chubaty <alex.chubaty@gmail.com>
 
 ## Remain current
 RUN apt-get update -qq \
-	&& apt-get dist-upgrade -y
+  && apt-get dist-upgrade -y
 
 ## additional build dependencies for R spatial packages
 RUN apt-get update -qq \
-&& apt-get install -y --no-install-recommends \
-	curl \
-	git
+  && apt-get install -y --no-install-recommends \
+    curl \
+    git
 
 ## install miniCRAN
 RUN RDscript -e 'install.packages("miniCRAN")'
@@ -24,5 +24,5 @@ RUN xvfb-run --auto-servernum RDscript -e 'spades.deps <- c("data.table", "raste
 
 ## get the current `SpaDES` package build for testing
 RUN git clone https://github.com/PredictiveEcology/SpaDES.git \
-	&& cd SpaDES
-	&& git checkout -b development
+  && cd SpaDES
+  && git checkout -b development

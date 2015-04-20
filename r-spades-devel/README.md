@@ -18,6 +18,7 @@ Run the `SpaDES` package checks in `R-devel`:
 
 ```r
 library(devtools)
+system("cd SpaDES && git pull && cd ..")
 session_info("SpaDES")
 check("SpaDES")
 check("SpaDES", cran=TRUE)

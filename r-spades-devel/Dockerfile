@@ -10,12 +10,6 @@ MAINTAINER Alex Chubaty <alex.chubaty@gmail.com>
 RUN apt-get update -qq \
   && apt-get dist-upgrade -y
 
-## additional build dependencies for R spatial packages
-RUN apt-get update -qq \
-  && apt-get install -y --no-install-recommends \
-    curl \
-    git
-
 ## install miniCRAN
 RUN RDscript -e 'install.packages("miniCRAN")'
 

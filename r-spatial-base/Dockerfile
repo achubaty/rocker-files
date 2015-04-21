@@ -15,11 +15,11 @@ RUN echo 'deb http://debian-r.debian.net/debian-r/ unstable main' >> /etc/apt/so
 
 ## Remain current
 RUN apt-get update -qq \
-	&& apt-get dist-upgrade -y
+  && apt-get dist-upgrade -y
 
 ## additional build dependencies for R spatial packages
 RUN apt-get update -qq \
-&& apt-get install -y --no-install-recommends \
+  && apt-get install -y --no-install-recommends \
 	bwidget \
 	ca-certificates \
 	curl \
@@ -37,8 +37,10 @@ RUN apt-get update -qq \
 	netcdf-bin \
 	xauth \
 	xfonts-base \
-	xvfb \\
-&& apt-get build-dep -y r-cran-rgl
+	xvfb \
+  && apt-get build-dep -y r-cran-rgl \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/
 
 ## install devtools
 RUN Rscript -e 'install.packages("devtools")'

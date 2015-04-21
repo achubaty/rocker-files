@@ -21,7 +21,11 @@ RUN apt-get update -qq \
 RUN apt-get update -qq \
   && apt-get install -y --no-install-recommends \
 	bwidget \
+	ca-certificates \
+	curl \
+	git \
 	gsl-bin \
+	libcurl4-openssl-dev \
 	libgdal-dev \
 	libgdal1-dev \
 	libgeos-dev \
@@ -34,7 +38,9 @@ RUN apt-get update -qq \
 	xauth \
 	xfonts-base \
 	xvfb \
-  && apt-get build-dep -y r-cran-rgl
+  && apt-get build-dep -y r-cran-rgl \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/
 
 ## install devtools
 RUN RDscript -e 'install.packages("devtools")'

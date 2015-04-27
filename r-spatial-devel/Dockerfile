@@ -42,6 +42,11 @@ RUN apt-get update -qq \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/
 
+## install `recommended` so Rdevel can use them
+## (Rdevel was installed using `--without-recommended`,
+##  so it doesn't 'see' these packages during `R CMD check`)
+RUN RDscript -e 'recommended <- unname(installed.packages(priority="recommended")[,"Package"]); install.packages(recommended, lib=.Library, dependencies=TRUE)'
+  
 ## install devtools
 RUN RDscript -e 'install.packages("devtools")'
 

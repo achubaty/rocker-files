@@ -1,7 +1,5 @@
 # rocker-files
 
------
-
 Dockerfiles based on the [`rocker`](https://github.com/rocker-org/rocker) project by @eddelbuettel and @cboettig.
 
 [![Build Status](https://travis-ci.org/achubaty/rocker-files.svg)](https://travis-ci.org/achubaty/rocker-files)

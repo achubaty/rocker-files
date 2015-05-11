@@ -23,10 +23,11 @@ RUN apt-get update -qq \
 	bwidget \
 	ca-certificates \
 	curl \
+	gdal-bin \
 	git \
 	gsl-bin \
 	libcurl4-openssl-dev \
-	libgdal-dev \
+	libgdal1h \
 	libgdal1-dev \
 	libgeos-dev \
 	libgeos++-dev \

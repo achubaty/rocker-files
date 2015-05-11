@@ -13,10 +13,6 @@ RUN echo 'deb http://debian-r.debian.net/debian-r/ unstable main' >> /etc/apt/so
   && echo 'deb-src http://debian-r.debian.net/debian-r/ unstable main' >> /etc/apt/sources.list \
   && echo 'deb-src http://http.debian.net/debian testing main' >> /etc/apt/sources.list
 
-## Remain current
-RUN apt-get update -qq \
-  && apt-get dist-upgrade -y
-
 ## additional build dependencies for R spatial packages
 RUN apt-get update -qq \
   && apt-get install -y --no-install-recommends \
@@ -48,4 +44,3 @@ RUN Rscript -e 'install.packages("devtools")'
 ## install additional R spatial packages
 RUN xvfb-run Rscript -e 'spatial.pkgs <-  c("geoR", "mapdata", "maps", "maptools", "RandomFields", "plotKML", "rgdal", "rgeos", "shapefiles", "sp", "spatstat", "raster", "rts"); lapply(spatial.pkgs, install.packages)'
 RUN Rscript -e 'devtools::install_github("s-u/fastshp")'
-

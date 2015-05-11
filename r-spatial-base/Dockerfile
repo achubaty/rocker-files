@@ -21,7 +21,7 @@ RUN apt-get update -qq \
 	curl \
 	git \
 	gsl-bin \
-	libcurl4-openssl-dev \
+	libcurl4-openssl-dev/unstable \
 	libgdal-dev \
 	libgdal1-dev \
 	libgeos-dev \

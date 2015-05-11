@@ -29,6 +29,7 @@ RUN apt-get update -qq \
 	libgsl0-dev \
 	libproj-dev \
 	libspatialite-dev \
+	libv8-dev \
 	libxml2-dev \
 	netcdf-bin \
 	xauth \

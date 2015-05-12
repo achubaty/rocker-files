@@ -39,12 +39,14 @@ RUN apt-get update -qq \
 	netcdf-bin \
 	pandoc \
 	qpdf \
+        r-cran-rgl \
 	xauth \
 	xfonts-base \
 	xvfb \
-  && apt-get build-dep -y r-cran-rgl \
+#  && apt-get build-dep -y r-cran-rgl \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/
+  && rm -rf /var/lib/apt/lists/* \
+  && rm -rf /var/lib/apt/lists
 
 ## install `recommended` so Rdevel can use them
 ## (Rdevel was installed using `--without-recommended`,

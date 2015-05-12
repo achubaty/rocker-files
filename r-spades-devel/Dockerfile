@@ -19,5 +19,5 @@ RUN xvfb-run --auto-servernum RDscript -e 'spades.deps <- c("data.table", "raste
 ## get the current `SpaDES` package build for testing
 RUN git clone https://github.com/PredictiveEcology/SpaDES.git \
   && cd SpaDES \
-  && git checkout -b development \
+  && git checkout development \
   && cd ..

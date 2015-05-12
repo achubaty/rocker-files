@@ -37,6 +37,8 @@ RUN apt-get update -qq \
 	libv8-dev \
 	libxml2-dev \
 	netcdf-bin \
+	pandoc \
+	qpdf \
 	xauth \
 	xfonts-base \
 	xvfb \

@@ -22,7 +22,7 @@ system("cd SpaDES && git pull && cd ..")
 session_info()
 check("SpaDES")
 check("SpaDES", cran=TRUE)
-check(args = c('--as-cran'), build_args = c('--md5'))
+check("SpaDES", args = c('--as-cran'), build_args = c('--md5'))
 ```
 
 Be sure to make a note of the Rdevel version and svn revision, and update `cran-comments.md` accordingly.

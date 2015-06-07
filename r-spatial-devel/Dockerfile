@@ -44,7 +44,7 @@ RUN apt-get update -qq \
 	netcdf-bin \
 	pandoc \
 	qpdf \
-        r-cran-rgl \
+	r-cran-rgl \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /var/lib/apt/lists

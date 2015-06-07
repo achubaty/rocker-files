@@ -31,10 +31,12 @@ RUN apt-get update -qq \
 	libgeos-dev/unstable \
 	libgeos++-dev/unstable \
 	libgsl0-dev \
+	libpq-dev/unstable \
 	libproj-dev \
 	libspatialite-dev/unstable \
 	libsqlite3-dev/unstable \
 	libv8-dev \
+	libwebp5/unstable \
 	libxml2-dev/unstable \
 	netcdf-bin \
 	pandoc \

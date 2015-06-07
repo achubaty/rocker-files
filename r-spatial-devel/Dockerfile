@@ -25,20 +25,20 @@ RUN apt-get update -qq \
 	gdal-bin \
 	git \
 	gsl-bin \
-	libgdal1h \
+	libgdal1h/unstable \
 	libgdal1-dev/unstable \
-	libgeos-dev \
-	libgeos++-dev \
+	libgeos-dev/unstable \
+	libgeos++-dev/unstable \
 	libgsl0-dev \
 	libproj-dev \
 	libspatialite-dev/unstable \
+	libsqlite3-dev/unstable \
 	libv8-dev \
 	libxml2-dev/unstable \
 	netcdf-bin \
 	pandoc \
 	qpdf \
         r-cran-rgl \
-        xauth \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /var/lib/apt/lists

@@ -25,6 +25,7 @@ RUN apt-get update -qq \
 	gdal-bin/unstable \
 	git \
 	gsl-bin \
+	krb5-multidev/unstable \
 	libgdal-dev/unstable \
 	libgdal1h/unstable \
 	libgdal1-dev/unstable \
@@ -35,7 +36,9 @@ RUN apt-get update -qq \
 	libproj-dev \
 	libspatialite-dev/unstable \
 	libsqlite3-dev/unstable \
+	libssl-dev/unstable \
 	libv8-dev \
+	libwebp-dev/unstable \
 	libwebp5/unstable \
 	libxml2-dev/unstable \
 	netcdf-bin \

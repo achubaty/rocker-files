@@ -21,29 +21,24 @@ RUN apt-get update -qq \
 RUN apt-get update -qq \
   && apt-get install -y --no-install-recommends \
 	bwidget \
-	ca-certificates \
-	curl \
+	curl/unstable \
 	gdal-bin \
 	git \
 	gsl-bin \
-	libcurl4-openssl-dev \
 	libgdal1h \
-	libgdal1-dev \
+	libgdal1-dev/unstable \
 	libgeos-dev \
 	libgeos++-dev \
 	libgsl0-dev \
 	libproj-dev \
-	libspatialite-dev \
+	libspatialite-dev/unstable \
 	libv8-dev \
-	libxml2-dev \
+	libxml2-dev/unstable \
 	netcdf-bin \
 	pandoc \
 	qpdf \
         r-cran-rgl \
-	xauth \
-	xfonts-base \
-	xvfb \
-#  && apt-get build-dep -y r-cran-rgl \
+        xauth \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /var/lib/apt/lists

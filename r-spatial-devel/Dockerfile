@@ -22,9 +22,10 @@ RUN apt-get update -qq \
   && apt-get install -y --no-install-recommends \
 	bwidget \
 	curl/unstable \
-	gdal-bin \
+	gdal-bin/unstable \
 	git \
 	gsl-bin \
+	libgdal-dev/unstable \
 	libgdal1h/unstable \
 	libgdal1-dev/unstable \
 	libgeos-dev/unstable \

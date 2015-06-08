@@ -21,26 +21,23 @@ RUN apt-get update -qq \
 RUN apt-get update -qq \
   && apt-get install -y --no-install-recommends \
 	bwidget \
-	curl/unstable \
-	gdal-bin/unstable \
+	curl\
+	gdal-bin \
 	git \
 	gsl-bin \
-	krb5-multidev/unstable \
-	libgdal-dev/unstable \
-	libgdal1h/unstable \
-	libgdal1-dev/unstable \
-	libgeos-dev/unstable \
-	libgeos++-dev/unstable \
+	libgdal1h \
+	libgdal1-dev \
+	libgeos-c1
+	libgeos-dev \
+	libgeos++-dev \
 	libgsl0-dev \
 	libpq-dev/unstable \
 	libproj-dev \
-	libspatialite-dev/unstable \
-	libsqlite3-dev/unstable \
-	libssl-dev/unstable \
+	libspatialite-dev \
+	libsqlite3-dev \
+	libssl-dev \
 	libv8-dev \
-	libwebp-dev/unstable \
-	libwebp5/unstable \
-	libxml2-dev/unstable \
+	libxml2-dev \
 	netcdf-bin \
 	pandoc \
 	qpdf \

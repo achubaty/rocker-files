@@ -21,3 +21,6 @@ RUN git clone https://github.com/PredictiveEcology/SpaDES.git \
   && cd SpaDES \
   && git checkout development \
   && cd ..
+
+## start user Rdevel session
+CMD ["xvfb-run Rdevel"]

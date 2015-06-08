@@ -27,7 +27,7 @@ RUN apt-get update -qq \
 	gsl-bin \
 	libgdal1h \
 	libgdal1-dev \
-	libgeos-c1
+	libgeos-c1 \
 	libgeos-dev \
 	libgeos++-dev \
 	libgsl0-dev \

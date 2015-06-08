@@ -54,3 +54,6 @@ RUN Rscript -e 'install.packages("devtools")'
 ## install additional R spatial packages
 RUN xvfb-run Rscript -e 'spatial.pkgs <-  c("geoR", "mapdata", "maps", "maptools", "RandomFields", "plotKML", "rgdal", "rgeos", "shapefiles", "sp", "spatstat", "raster", "rts"); lapply(spatial.pkgs, install.packages)'
 RUN Rscript -e 'devtools::install_github("s-u/fastshp")'
+
+## start user R session
+CMD ["xvfb-run R"]

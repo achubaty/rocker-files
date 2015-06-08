@@ -56,4 +56,4 @@ RUN xvfb-run Rscript -e 'spatial.pkgs <-  c("geoR", "mapdata", "maps", "maptools
 RUN Rscript -e 'devtools::install_github("s-u/fastshp")'
 
 ## start user R session
-CMD ["xvfb-run R"]
+CMD ["xvfb-run", "R"]

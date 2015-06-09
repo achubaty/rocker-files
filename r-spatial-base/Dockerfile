@@ -19,7 +19,7 @@ RUN apt-get update -qq \
 
 ## additional build dependencies for R spatial packages
 RUN apt-get update -qq \
-  && apt-get install -y --no-install-recommends \
+  && apt-get install -y --no-install-recommends -t unstable \
 	bwidget \
 	ca-certificates \
 	curl \

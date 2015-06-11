@@ -21,6 +21,7 @@ library(devtools)
 system("cd SpaDES && git pull && cd ..")
 session_info()
 check("SpaDES", args = c('--as-cran'))
+covr::package_coverage(quiet = FALSE)
 ```
 
 Be sure to make a note of the Rdevel version and svn revision, and update `cran-comments.md` accordingly.

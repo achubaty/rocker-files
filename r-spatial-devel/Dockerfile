@@ -52,8 +52,8 @@ RUN apt-get update -qq \
 RUN RDscript -e 'recommended <- unname(installed.packages(priority="recommended")[,"Package"]); install.packages(recommended, lib=.Library, dependencies=TRUE)'
   
 ## install devtools
-RUN RDscript -e 'install.packages("devtools")'
+RUN RDscript -e 'options(repos = "http://cran.rstudio.com/"); install.packages("devtools")'
 
-## install additional R spatial packages
-RUN xvfb-run RDscript -e 'spatial.pkgs <-  c("geoR", "mapdata", "maps", "maptools", "RandomFields", "plotKML", "rgdal", "rgeos", "shapefiles", "sp", "spatstat", "raster", "rts"); lapply(spatial.pkgs, install.packages)'
+## install R spatial packages
+RUN xvfb-run RDscript -e 'options(repos = "http://cran.rstudio.com/"); install.packages( c("geoR", "mapdata", "maps", "maptools", "RandomFields", "plotKML", "rgdal", "rgeos", "shapefiles", "sp", "spatstat", "raster", "rts") )'
 RUN RDscript -e 'devtools::install_github("s-u/fastshp")'

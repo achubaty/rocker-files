@@ -10,16 +10,11 @@ MAINTAINER Alex Chubaty <alex.chubaty@gmail.com>
 RUN apt-get update -qq \
   && apt-get dist-upgrade -y
 
-## install miniCRAN
-RUN RDscript -e 'install.packages("miniCRAN")'
-
-## install `SpaDES` package dependencies
-RUN xvfb-run --auto-servernum RDscript -e 'spades.deps <- c("data.table", "raster", "knitr", "Matrix", "CircStats", "dplyr", "magrittr", "testthat", "downloader", "fpCompare", "ggplot2", "gridBase", "httr", "igraph", "RandomFields", "RColorBrewer", "rgdal", "secr", "sp", "tkrplot"); all.deps <- miniCRAN::pkgDep(spades.deps, depends=TRUE, suggests=FALSE, enhances=FALSE); installed <- unname(installed.packages()[,"Package"]); packages <- as.list(all.deps); packages <- packages[-which(packages %in% installed)]; lapply(packages, install.packages)'
-
-RUN RDscript -e 'devtools::install_github("jimhester/covr")'
-
 ## get the current `SpaDES` package build for testing
 RUN git clone https://github.com/PredictiveEcology/SpaDES.git \
   && cd SpaDES \
-  && git checkout development \
-  && cd ..
+  && git checkout development
+
+## install `SpaDES` package dependencies
+RUN xvfb-run RDscript -e 'options(repos = "http://cran.rstudio.com/"); tryCatch({ deps <- devtools::install_deps(dependencies = TRUE) }, error = function(e) { message(e); q(status=1) }); if (!all(deps %in% installed.packages())) { message("missing: ", paste(setdiff(deps, installed.packages()), collapse=", "));  q(status = 1, save = "no") }'
+RUN RDscript -e 'devtools::install_github("jimhester/covr")' # `fastshp` already installed

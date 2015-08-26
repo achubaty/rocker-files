@@ -27,7 +27,7 @@ RUN apt-get update -qq \
 	git \
 	gsl-bin \
 	libcurl4-openssl-dev \
-	libgdal1h \
+#	libgdal1h \
 	libgdal1-dev \
 	libgeos-dev \
 	libgeos++-dev \
@@ -43,7 +43,7 @@ RUN apt-get update -qq \
 	xauth \
 	xfonts-base \
 	xvfb \
-#  && apt-get build-dep -y r-cran-rgl \
+  && apt-get autoremove -y \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /var/lib/apt/lists

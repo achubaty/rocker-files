@@ -25,7 +25,7 @@ RUN apt-get update -qq \
 	gdal-bin \
 	git \
 	gsl-bin \
-	libgdal1h \
+#	libgdal1h \
 	libgdal1-dev \
 	libgeos-c1 \
 	libgeos-dev \
@@ -42,6 +42,7 @@ RUN apt-get update -qq \
 	pandoc \
 	qpdf \
 	r-cran-rgl \
+  && apt-get autoremove -y \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /var/lib/apt/lists

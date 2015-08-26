@@ -42,7 +42,6 @@ RUN apt-get update -qq \
 	pandoc \
 	qpdf \
 	r-cran-rgl \
-  && apt-get autoremove -y \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /var/lib/apt/lists

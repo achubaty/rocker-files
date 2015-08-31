@@ -21,7 +21,7 @@ RUN apt-get update -qq \
 RUN apt-get update -qq \
   && apt-get install -y --no-install-recommends -t unstable \
 	bwidget \
-	curl\
+	curl \
 	gdal-bin \
 	git \
 	gsl-bin \
@@ -52,8 +52,8 @@ RUN apt-get update -qq \
 RUN RDscript -e 'recommended <- unname(installed.packages(priority="recommended")[,"Package"]); install.packages(recommended, lib=.Library, dependencies=TRUE)'
   
 ## install devtools
-RUN RDscript -e 'options(repos = "http://cran.rstudio.com/"); install.packages("devtools")'
+RUN RDscript -e 'install.packages("devtools")'
 
 ## install R spatial packages
-RUN xvfb-run RDscript -e 'options(repos = "http://cran.rstudio.com/"); install.packages( c("geoR", "mapdata", "maps", "maptools", "RandomFields", "plotKML", "rgdal", "rgeos", "shapefiles", "sp", "spatstat", "raster", "rts") )'
+RUN xvfb-run RDscript -e 'install.packages( c("geoR", "mapdata", "maps", "maptools", "RandomFields", "plotKML", "rgdal", "rgeos", "shapefiles", "sp", "spatstat", "raster", "rts") )'
 RUN RDscript -e 'devtools::install_github("s-u/fastshp")'

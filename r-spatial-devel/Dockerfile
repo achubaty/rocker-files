@@ -18,8 +18,7 @@ RUN apt-get update -qq \
   && apt-get dist-upgrade -y
 
 ## additional build dependencies for R spatial packages
-RUN apt-get update -qq \
-  && apt-get install -y --no-install-recommends -t unstable \
+RUN apt-get install -y --no-install-recommends -t unstable \
 	bwidget \
 	curl \
 	gdal-bin \

@@ -39,6 +39,7 @@ RUN apt-get install -y --no-install-recommends -t unstable \
 	pandoc \
 	qpdf \
 	r-cran-rgl \
+	r-cran-tkrplot \
 	xauth \
 	xfonts-base \
 	xvfb \

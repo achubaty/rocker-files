@@ -41,6 +41,7 @@ RUN apt-get install -y --no-install-recommends -t unstable \
 	pandoc \
 	qpdf \
 	r-cran-rgl \
+	r-cran-tkrplot \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /var/lib/apt/lists

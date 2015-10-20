@@ -51,5 +51,5 @@ RUN apt-get install -y --no-install-recommends -t unstable \
 RUN Rscript -e 'install.packages("devtools")'
 
 ## install R spatial packages
-RUN xvfb-run Rscript -e 'install.packages( c("geoR", "mapdata", "maps", "maptools", "RandomFields", "plotKML", "rgdal", "rgeos", "shapefiles", "sp", "spatstat", "raster", "rts") )'
+RUN xvfb-run Rscript -e 'install.packages( c("geoR", "ggvis", "mapdata", "maps", "maptools", "RandomFields", "plotKML", "rgdal", "rgeos", "shapefiles", "sp", "spatstat", "raster", "rasterVis", "rts") )'
 RUN Rscript -e 'devtools::install_github("s-u/fastshp")'

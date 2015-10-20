@@ -55,5 +55,5 @@ RUN RDscript -e 'recommended <- unname(installed.packages(priority="recommended"
 RUN RDscript -e 'install.packages("devtools")'
 
 ## install R spatial packages
-RUN xvfb-run RDscript -e 'install.packages( c("geoR", "mapdata", "maps", "maptools", "RandomFields", "plotKML", "rgdal", "rgeos", "shapefiles", "sp", "spatstat", "raster", "rts") )'
+RUN xvfb-run RDscript -e 'install.packages( c("geoR", "ggvis", "mapdata", "maps", "maptools", "RandomFields", "plotKML", "rgdal", "rgeos", "shapefiles", "sp", "spatstat", "raster", "rasterVis", "rts") )'
 RUN RDscript -e 'devtools::install_github("s-u/fastshp")'

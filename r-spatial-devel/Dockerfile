@@ -24,12 +24,10 @@ RUN apt-get install -y --no-install-recommends -t unstable \
 	gdal-bin \
 	git \
 	gsl-bin \
-#	libgdal1h \
 	libgdal1-dev \
 	libgeos-c1v5 \
 	libgeos-dev \
 	libgeos++-dev \
-	libgsl0-dev \
 	libpq-dev/unstable \
 	libproj-dev \
 	libspatialite-dev \

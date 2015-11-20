@@ -29,7 +29,6 @@ RUN apt-get install -y --no-install-recommends -t unstable \
 	libgdal1-dev \
 	libgeos-dev \
 	libgeos++-dev \
-	libgsl0-dev \
 	libproj-dev \
 	libspatialite-dev \
 	libv8-dev \

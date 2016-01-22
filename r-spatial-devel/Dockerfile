@@ -36,7 +36,7 @@ RUN apt-get install -y --no-install-recommends -t unstable \
 	libv8-dev \
 	libxml2-dev \
 	netcdf-bin \
-	pandoc \
+	pandoc pandoc-citeproc\
 	qpdf \
 	r-cran-rgl \
 	r-cran-tkrplot \

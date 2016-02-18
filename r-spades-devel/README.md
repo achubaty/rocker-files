@@ -11,7 +11,7 @@ Start the container instance:
 ```
 docker run --rm -it achubaty/r-spades-devel bash
 
-xvfb-run Rdevel
+xvfb-run -a Rdevel
 ```
 
 Run the `SpaDES` package checks in `R-devel`:

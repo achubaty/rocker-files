@@ -16,7 +16,10 @@ RUN git clone https://github.com/PredictiveEcology/SpaDES.git \
   && git checkout development
 
 ## install `SpaDES` package dependencies
+RUN install.r roxygen2
+RUN installGithub.r jimhester/covr # `fastshp` already installed
+RUN xvfb-run -a installGithub.r PredictiveEcology/SpaDES # shouldn't be needed
+# not sure why some packages aren't being installed using only the command below
 RUN cd SpaDES \
   && xvfb-run RDscript -e 'tryCatch({ deps <- devtools::install_deps(dependencies = TRUE) }, error = function(e) { message(e); q(status=1) }); if (!all(deps %in% installed.packages())) { message("missing: ", paste(setdiff(deps, installed.packages()), collapse=", "));  q(status = 1, save = "no") }'
-RUN RDscript -e 'install.packages("igraph")'
-RUN RDscript -e 'devtools::install_github("jimhester/covr")' # `fastshp` already installed
+

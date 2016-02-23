@@ -17,6 +17,7 @@ xvfb-run -a Rdevel
 Run the `SpaDES` package checks in `R-devel`:
 
 ```r
+update.packages(ask = FALSE)
 library(devtools)
 system("cd SpaDES && git pull && cd ..")
 session_info()

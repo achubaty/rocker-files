@@ -17,7 +17,7 @@ RUN git clone https://github.com/PredictiveEcology/SpaDES.git \
 
 ## install `SpaDES` package dependencies
 RUN install.r roxygen2
-RUN installGithub.r jimhester/covr # `fastshp` already installed
+RUN installGithub.r jimhester/covr MangoTheCat/visualTest # `fastshp` already installed
 RUN xvfb-run -a installGithub.r PredictiveEcology/SpaDES # shouldn't be needed
 # not sure why some packages aren't being installed using only the command below
 RUN cd SpaDES \

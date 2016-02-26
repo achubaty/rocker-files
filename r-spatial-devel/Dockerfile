@@ -55,7 +55,9 @@ RUN RDscript -e 'install.packages("devtools")'
 ## install R spatial packages
 RUN xvfb-run -a install.r \
     geoR \
+    ggmap \
     ggvis \
+    gstat \
     mapdata \
     maps \
     maptools \

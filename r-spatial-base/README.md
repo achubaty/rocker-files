@@ -10,5 +10,5 @@ Dockerfile based on the [`rocker`](https://github.com/rocker-org/rocker) project
     ```
     docker run --rm -it achubaty/r-spatial-base bash
     
-    xvfb-run R
+    xvfb-run -a R
     ```

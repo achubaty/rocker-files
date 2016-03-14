@@ -26,7 +26,7 @@ RUN apt-get install -y --no-install-recommends -t unstable \
 	git \
 	gsl-bin \
 	libcurl4-openssl-dev \
-	libgdal1-dev \
+	libgdal-dev \
 	libgeos-dev \
 	libgeos++-dev \
 	libproj-dev \
@@ -34,7 +34,7 @@ RUN apt-get install -y --no-install-recommends -t unstable \
 	libv8-dev \
 	libxml2-dev \
 	netcdf-bin \
-	pandoc \
+	pandoc pandoc-citeproc \
 	qpdf \
 	r-cran-rgl \
 	r-cran-tkrplot \

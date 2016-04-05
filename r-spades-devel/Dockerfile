@@ -8,7 +8,10 @@ MAINTAINER Alex Chubaty <alex.chubaty@gmail.com>
 
 ## Remain current
 RUN apt-get update -qq \
-  && apt-get dist-upgrade -y
+  && apt-get dist-upgrade -y \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* \
+  && rm -rf /var/lib/apt/lists
 
 ## get the current `SpaDES` package build for testing
 RUN git clone --branch=development --single-branch --depth=1 https://github.com/PredictiveEcology/SpaDES.git

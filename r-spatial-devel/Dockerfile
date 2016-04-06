@@ -48,7 +48,7 @@ RUN apt-get install -y --no-install-recommends -t unstable \
 RUN RDscript -e 'recommended <- unname(installed.packages(priority="recommended")[,"Package"]); install.packages(recommended, lib=.Library, dependencies=TRUE)'
   
 ## install devtools
-RUN RDscript -e 'install.packages("devtools")'
+RUN install.r devtools
 
 ## install R spatial packages
 RUN xvfb-run -a install.r \

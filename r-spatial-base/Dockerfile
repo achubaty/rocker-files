@@ -48,7 +48,7 @@ RUN apt-get install -y --no-install-recommends -t unstable \
 ## install devtools
 RUN install2.r devtools
 
-## install R spatial packages
+## install R spatial packages && cleanup
 RUN xvfb-run -a install.r \
     geoR \
     ggmap \
@@ -66,5 +66,6 @@ RUN xvfb-run -a install.r \
     spatstat \
     raster \
     rasterVis \
-    rts
-RUN installGithub.r s-u/fastshp
+    rts \
+  && installGithub.r s-u/fastshp \
+  && rm -rf /tmp/downloaded_packages/ /tmp/*.rds

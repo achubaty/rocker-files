@@ -50,7 +50,7 @@ RUN RDscript -e 'recommended <- unname(installed.packages(priority="recommended"
 ## install devtools
 RUN install.r devtools
 
-## install R spatial packages
+## install R spatial packages && cleanup
 RUN xvfb-run -a install.r \
     geoR \
     ggmap \
@@ -68,5 +68,6 @@ RUN xvfb-run -a install.r \
     spatstat \
     raster \
     rasterVis \
-    rts
-RUN installGithub.r s-u/fastshp
+    rts \
+  && installGithub.r s-u/fastshp \
+  && rm -rf /tmp/downloaded_packages/ /tmp/*.rds

@@ -25,7 +25,6 @@ RUN apt-get install -y --no-install-recommends -t unstable \
 	git \
 	gsl-bin \
 	libgdal-dev \
-#	libgeos-c1v5 \
 	libgeos-dev \
 	libgeos++-dev \
 	libproj-dev \

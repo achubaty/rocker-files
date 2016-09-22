@@ -17,6 +17,6 @@ RUN apt-get update -qq \
 RUN git clone --branch=development --single-branch --depth=1 https://github.com/PredictiveEcology/SpaDES.git
 
 ## install `SpaDES` package dependencies && cleanup
-RUN install.r roxygen2
+RUN install.r R6 roxygen2
 RUN xvfb-run -a RDscript -e 'tryCatch({ deps <- withr::with_libpaths(.Library.site[1], devtools::install_deps("SpaDES", dependencies = TRUE)) }, error = function(e) { message(e); q(status=1) }); if (!all(deps %in% installed.packages())) { message("missing: ", paste(setdiff(deps, installed.packages()), collapse=", "));  q(status = 1, save = "no") }' \
   && rm -rf /tmp/downloaded_packages/ /tmp/*.rds

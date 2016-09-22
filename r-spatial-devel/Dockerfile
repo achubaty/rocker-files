@@ -1,72 +1,65 @@
 ## Emacs, make this -*- mode: sh; -*-
 
 ## start with the Docker 'R-devel' Debian-based image
-FROM rocker/r-devel:latest
+FROM rocker/drd:latest
 
 ## maintainer of this script
 MAINTAINER Alex Chubaty <alex.chubaty@gmail.com>
 
-## Add binaries for more CRAN packages, deb-src repositories in case we need `apt-get build-dep`
-#RUN echo 'deb http://debian-r.debian.net/debian-r/ unstable main' >> /etc/apt/sources.list \
-#  && gpg --keyserver keyserver.ubuntu.com --recv-keys AE05705B842492A68F75D64E01BF7284B26DD379 \
-#  && gpg --export AE05705B842492A68F75D64E01BF7284B26DD379  | apt-key add - \
-#  && echo 'deb-src http://debian-r.debian.net/debian-r/ unstable main' >> /etc/apt/sources.list \
-#  && echo 'deb-src http://http.debian.net/debian testing main' >> /etc/apt/sources.list
-
-## Remain current
+## 1. Remain current;
+## 2. Add additional build dependencies for R spatial packages;
+## 3. Install `recommended` so Rdevel can use them
+##    (Rdevel was installed using `--without-recommended`,
+##    so it doesn't 'see' these packages during `R CMD check`);
+## 4. Install devtools;
+## 5. Install R spatial packages;
+## 6. Cleanup downloaded packages.
+##
+## All of this is run in a single RUN command to get a single AUFS layer
 RUN apt-get update -qq \
-  && apt-get dist-upgrade -y
-
-## additional build dependencies for R spatial packages
-RUN apt-get install -y --no-install-recommends -t unstable \
-	bwidget \
-	curl \
-	gdal-bin \
-	git \
-	gsl-bin \
-	libgdal-dev \
-	libgeos-dev \
-	libgeos++-dev \
-	libproj-dev \
-	libspatialite-dev \
-	libssl-dev \
-	libv8-dev \
-	libxml2-dev \
-	netcdf-bin \
-	pandoc pandoc-citeproc\
-	qpdf \
-	r-cran-rgl \
-	r-cran-tkrplot \
+  && apt-get dist-upgrade -y \
+  && apt-get install -y --no-install-recommends -t unstable \
+	  bwidget \
+	  curl \
+	  gdal-bin \
+	  git \
+	  gsl-bin \
+	  libgdal-dev \
+	  libgeos-dev \
+	  libgeos++-dev \
+	  libproj-dev \
+	  libspatialite-dev \
+	  libssl-dev \
+	  libv8-dev \
+	  libxml2-dev \
+	  netcdf-bin \
+	  pandoc pandoc-citeproc\
+	  qpdf \
+	  r-cran-rgl \
+	  r-cran-tkrplot \
+  && RDscript -e 'recommended <- unname(installed.packages(priority="recommended")[,"Package"]); install.packages(recommended, lib=.Library, dependencies=TRUE)' \
+  && install.r devtools \
+  && xvfb-run -a install.r \
+      geoR \
+      ggmap \
+      ggvis \
+      gstat \
+      mapdata \
+      maps \
+      maptools \
+      plotKML \
+      RandomFields \
+      rgdal \
+      rgeos \
+      shapefiles \
+      sp \
+      spatstat \
+      raster \
+      rasterVis \
+      rts \
+  && installGithub.r s-u/fastshp \
+  && rm -rf /tmp/downloaded_packages/ /tmp/*.rds \
+  && apt-get autoremove -qy \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /var/lib/apt/lists
-
-## install `recommended` so Rdevel can use them
-## (Rdevel was installed using `--without-recommended`,
-##  so it doesn't 'see' these packages during `R CMD check`)
-RUN RDscript -e 'recommended <- unname(installed.packages(priority="recommended")[,"Package"]); install.packages(recommended, lib=.Library, dependencies=TRUE)'
-  
-## install devtools
-RUN install.r devtools
-
-## install R spatial packages && cleanup
-RUN xvfb-run -a install.r \
-    geoR \
-    ggmap \
-    ggvis \
-    gstat \
-    mapdata \
-    maps \
-    maptools \
-    plotKML \
-    RandomFields \
-    rgdal \
-    rgeos \
-    shapefiles \
-    sp \
-    spatstat \
-    raster \
-    rasterVis \
-    rts \
-  && installGithub.r s-u/fastshp \
-  && rm -rf /tmp/downloaded_packages/ /tmp/*.rds

@@ -27,6 +27,7 @@ RUN apt-get update -qq \
 	  libgdal-dev \
 	  libgeos-dev \
 	  libgeos++-dev \
+	  libreadline-dev \
 	  libproj-dev \
 	  libspatialite-dev \
 	  libssl-dev \

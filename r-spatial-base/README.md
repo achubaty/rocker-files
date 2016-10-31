@@ -11,9 +11,9 @@ Dockerfile based on the [`rocker`](https://github.com/rocker-org/rocker) project
 
 Some spatial packages require an X server, so `R` should be started using:
 
-    ```
-    docker run --rm -it achubaty/r-spatial-base bash
-    
-    xvfb-run -a R
-    ```
+```
+docker run --rm -it achubaty/r-spatial-base bash
+
+xvfb-run -a R
+```
 

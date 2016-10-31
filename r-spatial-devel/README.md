@@ -11,9 +11,9 @@ Dockerfile based on the [`rocker`](https://github.com/rocker-org/rocker) project
 
 Some spatial packages require an X server, so `Rdevel` should be started using:
 
-    ```
-    docker run --rm -it achubaty/r-spatial-devel bash
+```
+docker run --rm -it achubaty/r-spatial-devel bash
 
-    xvfb-run -a Rdevel
-    ```
+xvfb-run -a Rdevel
+```
 

@@ -19,25 +19,26 @@ MAINTAINER Alex Chubaty <alex.chubaty@gmail.com>
 RUN apt-get update -qq \
   && apt-get dist-upgrade -y \
   && apt-get install -y --no-install-recommends -t unstable \
-	  bwidget \
-	  curl \
-	  gdal-bin \
-	  git \
-	  gsl-bin \
-	  libgdal-dev \
-	  libgeos-dev \
-	  libgeos++-dev \
-	  libreadline-dev \
-	  libproj-dev \
-	  libspatialite-dev \
-	  libssl-dev \
-	  libv8-dev \
-	  libxml2-dev \
-	  netcdf-bin \
-	  pandoc pandoc-citeproc\
-	  qpdf \
-	  r-cran-rgl \
-	  r-cran-tkrplot \
+      bwidget \
+      curl \
+      gdal-bin \
+      git \
+      gsl-bin \
+      libcurl4-openssl-dev \
+      libgdal-dev \
+      libgeos-dev \
+      libgeos++-dev \
+      libreadline-dev \
+      libproj-dev \
+      libspatialite-dev \
+      libssl-dev \
+      libv8-dev \
+      libxml2-dev \
+      netcdf-bin \
+      pandoc pandoc-citeproc\
+      qpdf \
+      r-cran-rgl \
+      r-cran-tkrplot \
   && RDscript -e 'recommended <- unname(installed.packages(priority="recommended")[,"Package"]); install.packages(recommended, lib=.Library, dependencies=TRUE)' \
   && install.r devtools \
   && xvfb-run -a install.r \

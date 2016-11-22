@@ -24,7 +24,7 @@ system("cd SpaDES && git pull && cd ..")
 update.packages(ask = FALSE)
 
 devtools::session_info()
-devtools::check("SpaDES", args = c('--as-cran'))
+devtools::check("SpaDES", args = c("--as-cran"))
 covr::package_coverage("SpaDES", quiet = FALSE)
 ```
 

@@ -53,6 +53,7 @@ RUN apt-get update -qq \
       RandomFields \
       rgdal \
       rgeos \
+      sf \
       shapefiles \
       sp \
       spatstat \

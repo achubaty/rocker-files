@@ -55,6 +55,7 @@ RUN xvfb-run -a install.r \
       RandomFields \
       rgdal \
       rgeos \
+      sf \
       shapefiles \
       sp \
       spatstat \

@@ -41,7 +41,7 @@ RUN apt-get install -y --no-install-recommends -t unstable \
   && rm -rf /var/lib/apt/lists
 
 ## install devtools
-RUN install2.r devtools
+RUN install2.r devtools remotes
 
 ## install R spatial packages && cleanup
 RUN xvfb-run -a install.r \

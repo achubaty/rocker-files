@@ -41,7 +41,7 @@ RUN apt-get update -qq \
       r-cran-rgl \
       r-cran-tkrplot \
   && RDscript -e 'recommended <- unname(installed.packages(priority="recommended")[,"Package"]); install.packages(recommended, lib=.Library, dependencies=TRUE)' \
-  && install.r devtools \
+  && install.r devtools remotes \
   && xvfb-run -a install.r \
       geoR \
       ggmap \

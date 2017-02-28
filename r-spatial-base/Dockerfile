@@ -25,6 +25,7 @@ RUN apt-get install -y --no-install-recommends -t unstable \
       libproj-dev \
       libspatialite-dev \
       libssl-dev \
+      libudunits2-dev \
       libv8-dev \
       libxml2-dev \
       netcdf-bin \

@@ -32,6 +32,7 @@ RUN apt-get update -qq \
       libproj-dev \
       libspatialite-dev \
       libssl-dev \
+      libudunits2-dev \
       libv8-dev \
       libxml2-dev \
       netcdf-bin \

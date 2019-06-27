@@ -15,6 +15,8 @@ MAINTAINER Alex Chubaty <alex.chubaty@gmail.com>
 RUN apt-get update -qq \
   && apt-get dist-upgrade -y \
   && apt-get install -y --no-install-recommends -t unstable \
+    libgit2-dev \
+    libnlopt-dev \
     tcl8.6-dev \
     texinfo \
     texlive-base \
@@ -27,7 +29,7 @@ RUN apt-get update -qq \
   && install.r R6 roxygen2 \
   && xvfb-run -a RDscript -e 'tryCatch({ deps <- withr::with_libpaths(.Library.site[1], devtools::install_deps("SpaDES", dependencies = TRUE)) }, error = function(e) { message(e); q(status=1) }); if (!all(deps %in% installed.packages())) { message("missing: ", paste(setdiff(deps, installed.packages()), collapse=", "));  q(status = 1, save = "no") }' \
   && rm -rf /tmp/downloaded_packages/ /tmp/*.rds \\
-  && dpkg --purge  \
+  && dpkg --purge \
     tcl8.6-dev \
     tk8.6-dev \
   && apt-get autoremove -qy \

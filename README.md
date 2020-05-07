@@ -4,11 +4,21 @@ Dockerfiles based on the [`rocker`](https://github.com/rocker-org/rocker) projec
 
 All of my images below are available from [Docker Hub](https://hub.docker.com/r/achubaty/) and can be pulled using:
 
-```
-docker pull achubaty/image-name
+```bash
+docker pull achubaty/<image-name>
 ```
 
 Specific use cases and instructions are in the `README` files for each image.
+
+## SpaDES projects
+
+**Image**  | **Description** |**Image size**
+-----------|-----------------|--------------
+[`landweb`](https://hub.docker.com/r/achubaty/landweb/) | LandWeb development environment.<br />[README](https://github.com/achubaty/rocker-files/blob/master/landweb/README.md) | [![](https://images.microbadger.com/badges/image/achubaty/landweb.svg)](https://microbadger.com/images/achubaty/landweb)
+[`spades-project`](https://hub.docker.com/r/achubaty/spades-project/) | Generic SpaDES project development environment.<br />[README](https://github.com/achubaty/rocker-files/blob/master/spades-project/README.md) | [![](https://images.microbadger.com/badges/image/achubaty/spades-project.svg)](https://microbadger.com/images/achubaty/spades-project)
+
+
+## Package development and testing
 
 **Image**  | **Description** |**Image size**
 -----------|-----------------|--------------

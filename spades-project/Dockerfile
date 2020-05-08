@@ -41,7 +41,7 @@ RUN apt-get autoremove -qy \
   && rm -rf /var/lib/apt/lists
 
 ## install devtools
-RUN install2.r devtools remotes rgl rJava tkrplot
+RUN install2.r config devtools remotes rgl rJava tkrplot
 
 ## install R spatial packages && cleanup
 ARG GITHUB_PAT=$GITHUB_PAT

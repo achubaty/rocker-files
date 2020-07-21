@@ -47,6 +47,7 @@ RUN install2.r config devtools remotes rgl rJava tkrplot
 ARG GITHUB_PAT=$GITHUB_PAT
 RUN xvfb-run -a /usr/local/bin/installGithub.r s-u/fastshp \
   && xvfb-run -a /usr/local/bin/installGithub.r "PredictiveEcology/quickPlot@development" \
+  && xvfb-run -a /usr/local/bin/installGithub.r "PredictiveEcology/Require@development" \
   && xvfb-run -a /usr/local/bin/installGithub.r "PredictiveEcology/reproducible@development" \
   && xvfb-run -a /usr/local/bin/installGithub.r "PredictiveEcology/SpaDES.core@development" \
   && xvfb-run -a /usr/local/bin/installGithub.r "PredictiveEcology/SpaDES.tools@development" \

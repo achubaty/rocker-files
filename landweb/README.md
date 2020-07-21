@@ -4,6 +4,12 @@ Provides a development environment for [LandWeb](https://github.com/PredictiveEc
 
 [![](https://images.microbadger.com/badges/image/achubaty/r-spades-devel.svg)](https://microbadger.com/images/achubaty/r-spades-devel)
 
+## Building this image
+
+```bash
+docker build -t achubaty/landweb --build-arg GITHUB_PAT=$GITHUB_PAT ~/GitHub/rocker-files/landweb
+```
+
 ## Using this image
 
 Start the container instance:

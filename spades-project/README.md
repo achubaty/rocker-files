@@ -4,6 +4,12 @@ Provides a development environment for [SpaDES](https://github.com/PredictiveEco
 
 [![](https://images.microbadger.com/badges/image/achubaty/r-spades-devel.svg)](https://microbadger.com/images/achubaty/spades-project)
 
+## Building the image
+
+```bash
+docker build -t achubaty/spades-project --build-arg GITHUB_PAT=$GITHUB_PAT ~/GitHub/rocker-files/spades-project
+```
+
 ## Using this image
 
 Start the container instance:

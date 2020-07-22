@@ -16,10 +16,10 @@ Start the container instance:
 
 ```bash
 # on macOS:
-docker run -d -p 8080:8787 -e PASSWORD=yourpasswordhere -v /Users/achubaty/GitHub/LandWeb:/home/rstudio/GitHub/LandWeb --name LandWeb achubaty/landweb
+docker run -d -p 8080:8787 -e PASSWORD=yourpasswordhere --name LandWeb achubaty/landweb
 
 # or, if on Ubuntu:
-docker run -d -p 127.0.0.1:8080:8787 -e PASSWORD=yourpasswordhere -v /home/achubaty/GitHub/LandWeb:/home/rstudio/GitHub/LandWeb --name LandWeb achubaty/landweb
+docker run -d -p 127.0.0.1:8080:8787 -e PASSWORD=yourpasswordhere --name LandWeb achubaty/landweb
 ```
 
 Resume the container instance:

@@ -1,7 +1,7 @@
 ## Emacs, make this -*- mode: sh; -*-
 
 ## start with the Docker 'R-base' Debian-based image
-FROM rocker/geospatial:3.6.3
+FROM rocker/geospatial:4.0.2
 
 ## maintainer of this script
 MAINTAINER Alex Chubaty <achubaty@for-cast.ca>
@@ -26,7 +26,6 @@ RUN apt-get install -y --no-install-recommends \
       nodejs \
       npm \
       pandoc pandoc-citeproc \
-      python-gdal \
       python3-gdal \
       xauth \
       xfonts-base \
@@ -40,8 +39,11 @@ RUN apt-get autoremove -qy \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /var/lib/apt/lists
 
+## config
+RUN echo "R_REMOTES_STANDALONE=true" >> /home/rstudio/.Renviron
+
 ## install devtools
-RUN install2.r config devtools remotes rgl rJava tkrplot
+RUN install2.r config devtools logging remotes rgl rJava tkrplot
 
 ## install R spatial packages && cleanup
 ARG GITHUB_PAT=$GITHUB_PAT

@@ -2,7 +2,7 @@
 
 ## start with the Docker 'R-base' Debian-based image
 #FROM rocker/geospatial:4.0.2
-FROM rockerdev/geospatial:4.0.2-bionic
+FROM rockerdev/geospatial:4.0.0-ubuntu18.04
 
 ## maintainer of this script
 MAINTAINER Alex Chubaty <achubaty@for-cast.ca>

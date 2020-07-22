@@ -1,7 +1,8 @@
 ## Emacs, make this -*- mode: sh; -*-
 
 ## start with the Docker 'R-base' Debian-based image
-FROM rocker/geospatial:4.0.2
+#FROM rocker/geospatial:4.0.2
+FROM rockerdev/geospatial:4.0.2-bionic
 
 ## maintainer of this script
 MAINTAINER Alex Chubaty <achubaty@for-cast.ca>

@@ -15,6 +15,7 @@ Specific use cases and instructions are in the `README` files for each image.
 **Image**  | **Description** |**Image size**
 -----------|-----------------|--------------
 [`landweb`](https://hub.docker.com/r/achubaty/landweb/) | LandWeb development environment.<br />[README](https://github.com/achubaty/rocker-files/blob/master/landweb/README.md) | [![](https://images.microbadger.com/badges/image/achubaty/landweb.svg)](https://microbadger.com/images/achubaty/landweb)
+[`landweb-standalone`](https://hub.docker.com/r/achubaty/landweb-standalone/) | A self-contained version of LandWeb development environment.<br />[README](https://github.com/achubaty/rocker-files/blob/master/landweb-standalone/README.md) | [![](https://images.microbadger.com/badges/image/achubaty/landweb-standalone.svg)](https://microbadger.com/images/achubaty/landweb-standalone)
 [`spades-project`](https://hub.docker.com/r/achubaty/spades-project/) | Generic SpaDES project development environment.<br />[README](https://github.com/achubaty/rocker-files/blob/master/spades-project/README.md) | [![](https://images.microbadger.com/badges/image/achubaty/spades-project.svg)](https://microbadger.com/images/achubaty/spades-project)
 
 

@@ -1,4 +1,4 @@
-FROM rocker/geospatial:4.0.5-ubuntugis
+FROM rocker/geospatial:4.0.5
 
 LABEL org.opencontainers.image.licenses="GPL-2.0-or-later" \
       org.opencontainers.image.source="https://github.com/achubaty/rocker-files" \

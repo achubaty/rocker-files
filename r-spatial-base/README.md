@@ -1,19 +1,19 @@
 # rocker-files/r-spatial-base
 
-Dockerfile based on the [`rocker`](https://github.com/rocker-org/rocker) project by @eddelbuettel and @cboettig.
-
-`r-spatial-base` adds various R spatial/mapping tools to the [`rocker/r-base`](https://hub.docker.com/r/rocker/r-base/) container.
-See [rocker issue 119](https://github.com/rocker-org/rocker/issues/119).
+Extends the `rocker/geospatial:ubuntugis` images from <https://github.com/rocker-org/rocker-versioned2>.
 
 [![](https://images.microbadger.com/badges/image/achubaty/r-spatial-base.svg)](https://microbadger.com/images/achubaty/r-spatial-base)
 
 ## Using this image
 
-Some spatial packages require an X server, so `R` should be started using:
-
 ```
-docker run --rm -it achubaty/r-spatial-base bash
-
-xvfb-run -a R
+docker run --rm -ti -e PASSWORD=yourpassword -p 8787:8787 achubaty/r-spatial-base:latest
 ```
+
+In addition to `latest`, the following tags are also supported, which correspond to the R version used in the image:
+
+- `4.3` (`latest`)
+- `4.2`
+- `4.1`
+- `4.0`
 

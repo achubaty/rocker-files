@@ -1,4 +1,4 @@
-FROM rocker/geospatial:4.1.3-ubuntugis
+FROM rocker/geospatial:4.0.5
 
 LABEL org.opencontainers.image.licenses="GPL-2.0-or-later" \
       org.opencontainers.image.source="https://github.com/achubaty/rocker-files" \
@@ -7,5 +7,7 @@ LABEL org.opencontainers.image.licenses="GPL-2.0-or-later" \
 
 COPY scripts/* /rocker-files_scripts/
 
+RUN /rocker-files_scripts/install_additional_libs.sh
+RUN /rocker-files_scripts/install_geospatial_extras.sh
 RUN /rocker-files_scripts/install_geospatial_R.sh
 

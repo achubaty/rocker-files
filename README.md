@@ -10,7 +10,31 @@ docker pull achubaty/<image-name>:<tag>
 
 ## Package development and testing
 
-Specific use cases and instructions are in the `README` files for each image.
+**Image**  | **Description** 
+-----------|-----------------
+[`r-spatial-base`](https://hub.docker.com/r/achubaty/r-spatial-base/) | Additional spatial/mapping tools to extend the `rocker/geospatial:ubuntugis` images.
+[`r-spatial-devel`](https://hub.docker.com/r/achubaty/r-spatial-devel/) | Adds various R spatial/mapping tools to the `rocker/verse:devel` image per `rocker/geospatial:ubuntugis`.
+
+The following tags are supported, which correspond to the major/minor R version used in the image:
+
+- `latest` (uses R 4.3.1)
+- `4.3` (uses R 4.3.1)
+- `4.2` (uses R 4.2.3)
+- `4.1` (uses R 4.1.3)
+- `4.0` (uses R 4.0.5)
+
+### Usage example
+
+1. launch an instance of a container
+
+```bash
+docker run --rm -ti -e PASSWORD=yourpassword -p 8080:8787 achubaty/r-spatial-base:4.2
+```
+
+2. connect to the running container's Rstudio instance
+
+Open your web browser and connect to `localhost:8080`, using username `rstudio` and the password you set in step 1 above.
+
 
 **Image**  | **Description** |**Image size**
 -----------|-----------------|--------------

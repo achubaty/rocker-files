@@ -1,5 +1,3 @@
-## based on https://github.com/rocker-org/rocker-versioned2/blob/master/scripts/install_geospatial.sh
-
 #!/bin/bash
 set -e
 
@@ -16,6 +14,7 @@ install2.r --error --skipmissing --skipinstalled -n "$NCPUS" \
       maps \
       plotKML \
       rasterVis \
+      rmapshaper \
       rts
 
 installGithub.r \

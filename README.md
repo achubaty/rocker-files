@@ -52,10 +52,12 @@ docker build . \
   -t achubaty/spades-project:4.2.3
 ```
 
-**Image**  | **Description** |**Image size**
------------|-----------------|--------------
-[`r-spatial-base`](https://hub.docker.com/r/achubaty/r-spatial-base/) | Adds various R spatial/mapping tools to the `rocker/geospatial:ubuntugis` container.<br />[README](https://github.com/achubaty/rocker-files/blob/master/r-spatial-base/README.md) | [![](https://images.microbadger.com/badges/image/achubaty/r-spatial-base.svg)](https://microbadger.com/images/achubaty/r-spatial-base)
-[`r-spatial-devel`](https://hub.docker.com/r/achubaty/r-spatial-devel/) | Adds various R spatial/mapping tools to the `rocker/verse:devel` container.<br />[README](https://github.com/achubaty/rocker-files/blob/master/r-spatial-devel/README.md) |[![](https://images.microbadger.com/badges/image/achubaty/r-spatial-devel.svg)](https://microbadger.com/images/achubaty/r-spatial-devel)
+**Image**  | **Description** 
+-----------|-----------------
+[`spades-project`](https://hub.docker.com/r/achubaty/spades-project/) | Additional spatial/mapping tools to extend the `rocker/geospatial:ubuntugis` images for use with SpaDES projects.
 
+The following tags are supported, which correspond to the major/minor R version used in the image:
 
-
+- `latest` (uses R 4.3.1)
+- `4.3.1` (uses R 4.3.1)
+- `4.2.3` (uses R 4.2.3)

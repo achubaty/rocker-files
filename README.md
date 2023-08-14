@@ -35,6 +35,22 @@ docker run --rm -ti -e PASSWORD=yourpassword -p 8080:8787 achubaty/r-spatial-bas
 
 Open your web browser and connect to `localhost:8080`, using username `rstudio` and the password you set in step 1 above.
 
+## SpaDES projects
+
+Generic Dockerfiles for building projects pinned to a specific version of R can be found in `dockerfiles/`.
+
+- `spades-project_4.2.3` builds a generic image for R 4.2.3
+- `spades-project_4.3.1` builds a generic image for R 4.3.1
+
+**These generic dockerfiles are intended to be used to build project-specific images.**
+
+### Building the base `spades-project` image
+
+```bash
+docker build . \
+  -f ${HOME}/GitHub/rocker-files/dockerfiles/spades-project_4.2.3.Dockerfile \
+  -t achubaty/spades-project:4.2.3
+```
 
 **Image**  | **Description** |**Image size**
 -----------|-----------------|--------------

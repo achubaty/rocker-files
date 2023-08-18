@@ -16,7 +16,12 @@ function apt_install() {
 
 apt_install \
     apt-utils \
-    libarchive-dev
+    biber \
+    libarchive-dev \
+    texlive-bibtex-extra \
+    texlive-fonts-extra \
+    texlive-latex-extra \
+    texlive-xetex
 
 # Clean up
 rm -rf /var/lib/apt/lists/*

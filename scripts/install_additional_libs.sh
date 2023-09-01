@@ -20,6 +20,7 @@ apt_install \
     libarchive-dev \
     texlive-bibtex-extra \
     texlive-fonts-extra \
+    texlive-fonts-recommended \
     texlive-latex-extra \
     texlive-xetex
 

@@ -17,8 +17,8 @@ docker pull achubaty/<image-name>:<tag>
 
 The following tags are supported, which correspond to the major/minor R version used in the image:
 
-- `latest` (uses R 4.3.1)
-- `4.3` (uses R 4.3.1)
+- `latest` (uses R 4.3.2)
+- `4.3` (uses R 4.3.2)
 - `4.2` (uses R 4.2.3)
 - `4.1` (uses R 4.1.3)
 - `4.0` (uses R 4.0.5)
@@ -40,7 +40,7 @@ Open your web browser and connect to `localhost:8080`, using username `rstudio` 
 Generic Dockerfiles for building projects pinned to a specific version of R can be found in `dockerfiles/`.
 
 - `spades-project_4.2.3` builds a generic image for R 4.2.3
-- `spades-project_4.3.1` builds a generic image for R 4.3.1
+- `spades-project_4.3.2` builds a generic image for R 4.3.2
 
 **These generic dockerfiles are intended to be used to build project-specific images.**
 

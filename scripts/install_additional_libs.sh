@@ -18,6 +18,7 @@ apt_install \
     apt-utils \
     biber \
     libarchive-dev \
+    libmagick++-dev \
     texlive-bibtex-extra \
     texlive-fonts-extra \
     texlive-fonts-recommended \

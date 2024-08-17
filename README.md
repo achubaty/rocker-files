@@ -17,8 +17,9 @@ docker pull achubaty/<image-name>:<tag>
 
 The following tags are supported, which correspond to the major/minor R version used in the image:
 
-- `latest` (uses R 4.3.2)
-- `4.3` (uses R 4.3.2)
+- `latest` (uses R 4.4.1)
+- `4.4` (uses R 4.4.1)
+- `4.3` (uses R 4.3.3)
 - `4.2` (uses R 4.2.3)
 - `4.1` (uses R 4.1.3)
 - `4.0` (uses R 4.0.5)
@@ -48,8 +49,8 @@ Generic Dockerfiles for building projects pinned to a specific version of R can 
 
 ```bash
 docker build . \
-  -f ${HOME}/GitHub/rocker-files/dockerfiles/spades-project_4.2.3.Dockerfile \
-  -t achubaty/spades-project:4.2.3
+  -f ${HOME}/GitHub/rocker-files/dockerfiles/spades-project_4.3.2.Dockerfile \
+  -t achubaty/spades-project:4.3.2
 ```
 
 **Image**  | **Description** 

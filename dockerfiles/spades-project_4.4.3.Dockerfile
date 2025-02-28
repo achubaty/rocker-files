@@ -11,3 +11,9 @@ RUN /rocker-files_scripts/install_additional_libs.sh
 RUN /rocker-files_scripts/install_geospatial_extras.sh
 RUN /rocker-files_scripts/install_geospatial_R.sh
 
+RUN /rocker-files_scripts/config_git.sh
+
+## rstudio configuration
+ADD https://raw.githubusercontent.com/achubaty/r-config/master/.config/rstudio/rstudio-prefs.json \
+  /home/$DEFAULT_USER/.config/rstudio/rstudio-prefs.json
+

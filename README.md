@@ -17,8 +17,8 @@ docker pull achubaty/<image-name>:<tag>
 
 The following tags are supported, which correspond to the major/minor R version used in the image:
 
-- `latest` (uses R 4.4.1)
-- `4.4` (uses R 4.4.1)
+- `latest` (uses R 4.4.3)
+- `4.4` (uses R 4.4.3)
 - `4.3` (uses R 4.3.3)
 - `4.2` (uses R 4.2.3)
 - `4.1` (uses R 4.1.3)
@@ -59,6 +59,7 @@ docker build . \
 
 The following tags are supported, which correspond to the major/minor R version used in the image:
 
-- `latest` (uses R 4.3.1)
+- `latest` (uses R 4.4.3)
+- `4.4.2` (uses R 4.4.2)
 - `4.3.1` (uses R 4.3.1)
 - `4.2.3` (uses R 4.2.3)

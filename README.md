@@ -91,7 +91,6 @@ When launching an instance of the container:
 - a custom `PASSWORD` can be specified and local input and output directories can be mounted;
 - `USERID` and `GROUPID` specify the user and group ids, respectively, and can be specified to ensure user permissions of the container match those of the mounted volume (defaults: `1000`) (see <https://rocker-project.org/images/versioned/rstudio.html#userid-and-groupid>);
 
-
 ##### Usage
 
 1. build the `LandWeb-standalone` image

@@ -125,7 +125,7 @@ docker run -d -it \
   --cpus=32 \
   -p 127.0.0.1:8080:8787 \
   --mount type=bind,source=/mnt/projects/HRV/LandWeb/inputs,target=/home/rstudio/GitHub/LandWeb/inputs \
-  --mount type=bind,source=/mnt/projects/HRV/LandWeb/inputs,target=/home/rstudio/GitHub/LandWeb/inputs \
+  --mount type=bind,source=/mnt/projects/HRV/LandWeb/outputs,target=/home/rstudio/GitHub/LandWeb/outputs \
   --name landweb01 \
   achubaty/landweb-standalone:development
 ```

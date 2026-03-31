@@ -10,15 +10,16 @@ NCPUS=${NCPUS:--1}
 install2.r --error --skipmissing --skipinstalled -n "$NCPUS" \
       gdalUtils \
       ggmap \
+      ggspatial \
       ggvis \
       maps \
       plotKML \
       rasterVis \
       rmapshaper \
-      rts
+      rts \
+      tidyterra
 
 installGithub.r \
-      s-u/fastshp \
       ropensci/NLMR \
       ropensci/tiler
 
